@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF121418</color>
+    <color name="surface">#FF23262D</color>
+    <color name="surface_pressed">#FF363A44</color>
+    <color name="accent">#FF3D7BFF</color>
+    <color name="power">#FFE5484D</color>
+    <color name="text">#FFF2F3F5</color>
+    <color name="muted">#FF9AA0AA</color>
+
+    <string name="app_name">ELCO Remote</string>
+
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <style name="RoundButton">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:background">@drawable/btn_round</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="DpadButton" parent="RoundButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/btn_dpad</item>
+    </style>
+
+    <style name="PillButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/btn_pill</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

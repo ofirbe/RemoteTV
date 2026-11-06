@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/app_name"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:minLines="2"
+        android:textColor="@color/muted"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnScan"
+            style="@style/PillButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="Scan" />
+
+        <Button
+            android:id="@+id/btnManual"
+            style="@style/PillButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Enter IP" />
+    </LinearLayout>
+
+    <!-- Power + Mute -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPower"
+            style="@style/RoundButton"
+            android:background="@drawable/btn_power"
+            android:text="⏻" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnMute"
+            style="@style/RoundButton"
+            android:text="🔇" />
+    </LinearLayout>
+
+    <!-- D-pad -->
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/dpad_ring"
+        android:columnCount="3"
+        android:padding="10dp"
+        android:rowCount="3">
+
+        <Space android:layout_width="80dp" android:layout_height="80dp" />
+        <Button android:id="@+id/btnUp" style="@style/DpadButton" android:text="▲" />
+        <Space android:layout_width="80dp" android:layout_height="80dp" />
+
+        <Button android:id="@+id/btnLeft" style="@style/DpadButton" android:text="◀" />
+        <Button
+            android:id="@+id/btnEnter"
+            style="@style/DpadButton"
+            android:background="@drawable/btn_enter"
+            android:text="OK"
+            android:textStyle="bold" />
+        <Button android:id="@+id/btnRight" style="@style/DpadButton" android:text="▶" />
+
+        <Space android:layout_width="80dp" android:layout_height="80dp" />
+        <Button android:id="@+id/btnDown" style="@style/DpadButton" android:text="▼" />
+        <Space android:layout_width="80dp" android:layout_height="80dp" />
+    </GridLayout>
+
+    <!-- Back / Home / Volume -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button android:id="@+id/btnBack" style="@style/RoundButton" android:text="↩" />
+            <Button
+                android:id="@+id/btnHome"
+                style="@style/RoundButton"
+                android:layout_marginTop="14dp"
+                android:text="⌂" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vol_rocker"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <Button
+                android:id="@+id/btnVolUp"
+                style="@style/RoundButton"
+                android:background="@android:color/transparent"
+                android:text="+" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VOL"
+                android:textColor="@color/muted"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnVolDown"
+                style="@style/RoundButton"
+                android:background="@android:color/transparent"
+                android:text="−" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
