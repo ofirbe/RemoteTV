@@ -25,6 +25,7 @@ class MainActivity : Activity() {
 
         findViewById<Button>(R.id.btnScan).setOnClickListener { scan() }
         findViewById<Button>(R.id.btnManual).setOnClickListener { manualEntry() }
+        findViewById<Button>(R.id.btnTools).setOnClickListener { TvTools.show(this) }
 
         mapOf(
             R.id.btnPower to RemoteKey.POWER,

@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,3 +37,14 @@ jobs:
             app/build/outputs/apk/debug/*.apk
             app/build/outputs/apk/release/*.apk
           if-no-files-found: error
+
+      # Stable public link (no login needed), handy for downloading straight onto the TV:
+      # https://github.com/<owner>/<repo>/releases/latest/download/ElcoRemote.apk
+      - name: Publish "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/release/app-release.apk ElcoRemote.apk
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest ElcoRemote.apk --target "${{ github.sha }}" \
+            --title "Latest build" --notes "Built from ${{ github.sha }}" --latest
